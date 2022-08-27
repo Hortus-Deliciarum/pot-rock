@@ -3,6 +3,9 @@
 import serial
 from pythonosc import udp_client
 
+LOCALHOST = "127.0.0.1"
+PORT = 10000
+
 ser = serial.Serial('/dev/ttyS1', 115200)  # Start serial communication
 
 
@@ -23,7 +26,7 @@ def parse_msg(msg):
 
 
 if __name__ == '__main__':
-    client = udp_client.SimpleUDPClient("127.0.0.1", 8000)
+    client = udp_client.SimpleUDPClient(LOCALHOST, PORT)
 
     while True:
         data = ser.readline()
