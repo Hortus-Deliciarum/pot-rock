@@ -1,0 +1,12 @@
+[Unit]
+Description=pot-rock serial dispatcher
+StartLimitIntervalSec=0
+
+[Service]
+Type=oneshot
+User=root
+ExecStart=/home/rock/Documents/Hortus-Deliciarum/pot-rock/core/potrock_serial_dispatcher.py
+Type=idle
+
+[Install]
+WantedBy=multi-user.target
