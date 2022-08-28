@@ -1,0 +1,16 @@
+[debug]
+DEBUG = 1
+
+[network]
+IP = '127.0.0.1'
+OUT_PORT = 8000
+
+[address]
+    ADDRESS = [
+        '/button_0',
+        '/button_1',
+        '/button_2',
+        '/pot_0',
+        '/pot_1',
+        '/pot_2'
+    ]
