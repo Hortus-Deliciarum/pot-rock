@@ -14,22 +14,22 @@ SERIAL_PATH = '/dev/ttyS1'
 BAUDRATE = 115200
 MAINPATH = Path(__file__).parent.absolute()
 CONFIG_PATH = MAINPATH / Path('../config/config.toml')
-IP, OUTPORT, DEBUG, ADDRESS = [None] * 4
+IP, OUT_PORT, DEBUG, ADDRESS = [None] * 4
 SERIAL = serial.Serial(SERIAL_PATH, BAUDRATE)  # Start serial communication
 
 
 def init_config():
     """config global labels"""
-    global IP, OUTPORT, DEBUG, ADDRESS
+    global IP, OUT_PORT, DEBUG, ADDRESS
 
     with open(CONFIG_PATH, 'r', encoding='utf-8') as c_file:
         t_data = toml.load(c_file)
 
     DEBUG = t_data['debug']['DEBUG']
     IP = t_data['network']['IP']
-    OUTPORT = t_data['network']['OUT_PORT']
+    OUT_PORT = t_data['network']['OUT_PORT']
     ADDRESS = t_data['address']['ADDRESS']
-    debug(DEBUG, "[ VALUES ]\t", DEBUG, IP, OUTPORT, ADDRESS)
+    debug(DEBUG, "[ VALUES ]\t", DEBUG, IP, OUT_PORT, ADDRESS)
 
 
 def parse_msg(msg):
@@ -54,7 +54,8 @@ def send_msg(_client, _addr, _val):
 
 
 if __name__ == '__main__':
-    client = udp_client.SimpleUDPClient(IP, OUTPORT)
+    init_config()
+    client = udp_client.SimpleUDPClient(IP, OUT_PORT)
 
     while True:
         data = SERIAL.readline()
