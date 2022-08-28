@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+puredata -nogui -jack /home/rock/Documents/Hortus-Deliciarum/rot-rock/patches/01.pd

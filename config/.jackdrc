@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+export JACK_NO_AUDIO_RESERVATION=1
+/usr/bin/jackd -R -P 95 -d alsa -d hw:rockchiprk3308a -r 44100 -p 128
