@@ -2,7 +2,7 @@
 #pylint: disable=too-many-function-args
 #pylint: disable=missing-module-docstring
 #pylint: disable=missing-function-docstring
-#pylint: disable=global-statement
+# pylint: disable=global-statement
 
 from pathlib import Path
 import serial
@@ -10,10 +10,12 @@ import toml
 from debugs import debug
 from pythonosc import udp_client
 
+SERIAL_PATH = '/dev/ttyS1'
+BAUDRATE = 115200
 MAINPATH = Path(__file__).parent.absolute()
 CONFIG_PATH = MAINPATH / Path('../config/config.toml')
 IP, OUTPORT, DEBUG, ADDRESS = [None] * 4
-SERIAL = serial.Serial('/dev/ttyS1', 115200)  # Start serial communication
+SERIAL = serial.Serial(SERIAL_PATH, BAUDRATE)  # Start serial communication
 
 
 def init_config():
@@ -29,6 +31,7 @@ def init_config():
     ADDRESS = t_data['address']['ADDRESS']
     debug(DEBUG, "[ VALUES ]\t", DEBUG, IP, OUTPORT, ADDRESS)
 
+
 def parse_msg(msg):
     init_config()
     address, datum = msg.split(' ')[:2]
@@ -39,12 +42,16 @@ def parse_msg(msg):
     except ValueError:
         datatyped = datum
 
-    print(address, datatyped)
+    debug(DEBUG, address, datatyped)
     return (address, datatyped)
+
 
 def send_msg(_client, _addr, _val):
     if _addr in ADDRESS:
         _client.send_message(_addr, _val)
+    else:
+        debug(DEBUG, f"EXCLUDED ADDRESS/MESSAGE:\t{_addr}\t{_val}")
+
 
 if __name__ == '__main__':
     client = udp_client.SimpleUDPClient(IP, OUTPORT)
