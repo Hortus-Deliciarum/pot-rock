@@ -3,14 +3,28 @@
 #include <Button2.h>
 #include <HardwareSerial.h>
 
-#define N_POTS    3
-#define N_BUTTONS 3
+#define DEBUG     0
+#define POTROCK   4
+#define N_POTS    POTROCK
+#define N_BUTTONS POTROCK
 #define RX        16
 #define TX        17
+#define POT0      33
+#define POT1      32
+#define POT2      35
+#define POT3      34
+#define BUTTON0   12
+#define BUTTON1   14
+#define BUTTON2   27
+#define BUTTON3   26
 
-// define the pin you want to use
-const int POT_PIN[] = { 35, 32, 33 };
-const int BUTTON_PIN[] = { 12, 14, 27 };
+#if POTROCK == 4
+  const int POT_PIN[] = { POT0, POT1, POT2, POT3 };
+  const int BUTTON_PIN[] = { BUTTON0, BUTTON1, BUTTON2, BUTTON3 };
+#elif POTROCK == 3
+  const int POT_PIN[] = { POT0, POT1, POT2  };
+  const int BUTTON_PIN[] = { BUTTON2, BUTTON1, BUTTON0 };
+#endif
 
 
 //ResponsiveAnalogRead analog(ANALOG_PIN, true);
@@ -25,7 +39,10 @@ HardwareSerial SerialPort(2);
 // but doing so may cause more noise to seep through if sleep is not enabled
 
 void setup() {
-  //Serial.begin(115200);
+  #if DEBUG
+    Serial.begin(115200);
+  #endif
+  
   SerialPort.begin(115200, SERIAL_8N1, RX, TX);
 
   for (int i=0; i < N_POTS; i++) {
@@ -53,6 +70,14 @@ void loop() {
     if(analog[i]->hasChanged()) {
     
       float value = (float)(analog[i]->getValue() >> 2);
+
+      #if DEBUG
+        Serial.print("/pot_");
+        Serial.print(i);
+        Serial.print(" ");
+        Serial.println(value / 1024);
+      #endif
+      
       SerialPort.print("/pot_");
       SerialPort.print(i);
       SerialPort.print(" ");
@@ -92,8 +117,15 @@ void released(Button2& btn) {
 }
 
 void send_msg(int n_button, int value) {
-    SerialPort.print("/button_");
-    SerialPort.print(n_button);
-    SerialPort.print(" ");
-    SerialPort.println(value);  
+  #if DEBUG
+    Serial.print("/button_");
+    Serial.print(n_button);
+    Serial.print(" ");
+    Serial.println(value); 
+  #endif
+  
+  SerialPort.print("/button_");
+  SerialPort.print(n_button);
+  SerialPort.print(" ");
+  SerialPort.println(value);  
 }
