@@ -10,7 +10,9 @@ OUT_PORT = 8000
         '/button_0',
         '/button_1',
         '/button_2',
+        '/button_3',
         '/pot_0',
         '/pot_1',
-        '/pot_2'
+        '/pot_2',
+        '/pot_3'
     ]
