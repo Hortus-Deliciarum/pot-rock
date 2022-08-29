@@ -48,6 +48,7 @@ def parse_msg(msg):
 
 def send_msg(_client, _addr, _val):
     if _addr in ADDRESS:
+        debug(DEBUG, f"{_addr}\t{_val}")
         _client.send_message(_addr, _val)
     else:
         debug(DEBUG, f"EXCLUDED ADDRESS/MESSAGE:\t{_addr}\t{_val}")
