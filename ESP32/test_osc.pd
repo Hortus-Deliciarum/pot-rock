@@ -1,0 +1,10 @@
+#N canvas 927 606 450 300 12;
+#X obj 119 214 netsend -b -u;
+#X msg 196 177 disconnect;
+#X msg 188 148 connect 192.168.1.125 54321;
+#X obj 96 103 oscformat woldwerwerw qwerty;
+#X msg 96 78 16 8 5;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 4 0 3 0;
