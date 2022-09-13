@@ -10,10 +10,10 @@
 #X obj 333 210 * 1000;
 #X obj 333 235 + 5;
 #X obj 185 224 *~ 0.95;
-#X obj 186 287 dac~;
 #X obj 338 281 print button_0;
 #X obj 605 140 loadbang;
 #X msg 605 165 \; pd dsp 1;
+#X obj 186 287 dac~ 2;
 #X connect 0 0 1 0;
 #X connect 2 0 10 0;
 #X connect 3 0 2 0;
@@ -23,8 +23,7 @@
 #X connect 7 0 8 0;
 #X connect 8 0 9 0;
 #X connect 9 0 3 0;
-#X connect 9 0 12 0;
+#X connect 9 0 11 0;
 #X connect 10 0 1 0;
-#X connect 10 0 11 0;
-#X connect 10 0 11 1;
-#X connect 13 0 14 0;
+#X connect 10 0 14 0;
+#X connect 12 0 13 0;
