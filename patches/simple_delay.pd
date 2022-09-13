@@ -5,12 +5,12 @@
 #X obj 194 163 sig~ 200;
 #X obj 333 110 netreceive -b -u 8000;
 #X obj 333 135 oscparse;
-#X obj 333 160 list trim;
-#X obj 333 185 route button_0;
-#X obj 333 210 * 1000;
-#X obj 333 235 + 5;
+#X obj 333 203 list trim;
+#X obj 333 228 route button_0;
+#X obj 333 253 * 1000;
+#X obj 333 278 + 5;
 #X obj 185 224 *~ 0.95;
-#X obj 338 281 print button_0;
+#X obj 338 324 print button_0;
 #X obj 605 140 loadbang;
 #X msg 605 165 \; pd dsp 1;
 #X obj 186 287 dac~ 2;
@@ -19,8 +19,8 @@
 #X connect 2 0 10 0;
 #X connect 3 0 2 0;
 #X connect 4 0 5 0;
-#X connect 4 0 15 0;
 #X connect 5 0 6 0;
+#X connect 5 0 15 0;
 #X connect 6 0 7 0;
 #X connect 7 0 8 0;
 #X connect 8 0 9 0;
