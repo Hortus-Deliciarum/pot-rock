@@ -2,7 +2,7 @@
 #X msg 303 266 bang;
 #X obj 73 414 bonk~;
 #X msg 100 69 mask 4 0.7;
-#X msg 73 28 thresh 2.5 5;
+#X msg 73 28 thresh 2.5 8;
 #X msg 302 167 attack-frames 1;
 #X msg 143 170 spew 0;
 #X msg 165 215 useloudness 0;
@@ -25,7 +25,7 @@
 #X msg 284 345 debounce 0;
 #X obj 480 324 loadbang;
 #X msg 480 348 \; pd dsp 1;
-#X msg 274 131 minvel 50;
+#X msg 274 131 minvel 75;
 #X connect 0 0 1 0;
 #X connect 1 0 9 0;
 #X connect 2 0 1 0;
