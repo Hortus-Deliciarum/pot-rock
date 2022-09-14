@@ -25,7 +25,7 @@
 #X msg 284 345 debounce 0;
 #X obj 480 324 loadbang;
 #X msg 480 348 \; pd dsp 1;
-#X msg 274 131 minvel 25;
+#X msg 274 131 minvel 50;
 #X connect 0 0 1 0;
 #X connect 1 0 9 0;
 #X connect 2 0 1 0;
