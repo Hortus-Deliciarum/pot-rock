@@ -1,0 +1,15 @@
+#N canvas 630 343 450 300 12;
+#X obj 112 73 osc~ 440;
+#X obj 189 121 phasor~ 1;
+#X obj 189 146 expr~ $v1 < 0.2;
+#X obj 134 180 *~;
+#X obj 112 98 *~ 0.5;
+#X obj 134 205 dac~ 1;
+#X obj 308 48 loadbang;
+#X msg 308 73 \; pd dsp 1;
+#X connect 0 0 4 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 1;
+#X connect 3 0 5 0;
+#X connect 4 0 3 0;
+#X connect 6 0 7 0;
