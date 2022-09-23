@@ -61,7 +61,7 @@
 #X msg 1332 172 read -resize ./chord.wav array1;
 #X obj 292 759 bng 25 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X msg 274 131 minvel 60;
+#X msg 274 131 minvel 75;
 #X obj 699 1133 dac~ 1;
 #X obj 1130 727 osc~;
 #X obj 1131 868 dac~ 1;
