@@ -1,0 +1,9 @@
+#N canvas 0 61 450 300 12;
+#X obj 149 83 adc~ 1;
+#X obj 149 108 delwrite~ del0 5000;
+#X obj 153 195 delread4~ del0;
+#X obj 150 159 sig~ 1000;
+#X obj 153 220 dac~ 1;
+#X connect 0 0 1 0;
+#X connect 2 0 4 0;
+#X connect 3 0 2 0;
