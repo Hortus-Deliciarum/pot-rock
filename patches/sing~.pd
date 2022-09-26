@@ -12,9 +12,9 @@
 #X msg 322 120 \$1 5;
 #X obj 322 155 line~;
 #X obj 572 94 inlet;
-#X obj 145 114 * \$2;
+#X obj 173 142 * \$2;
 #X obj 538 430 loadbang;
-#X obj 538 488 print arg;
+#X obj 538 563 print arg;
 #X obj 572 123 route clear;
 #X obj 572 152 f 0;
 #X msg 145 320 \$1 5;
@@ -25,10 +25,11 @@
 #X obj 538 459 f \$1;
 #X floatatom 73 223 5 0 0 0 - - -;
 #X obj 144 511 *~;
-#X obj 163 226 expr $f1 * (1 + $f1 / 128);
-#X obj 163 255 / 2;
+#X obj 538 488 / 128;
+#X obj 145 226 expr $f1 * (0.5 + \$1 / 128);
 #X connect 0 0 2 0;
 #X connect 2 0 13 0;
+#X connect 2 0 27 0;
 #X connect 2 1 19 0;
 #X connect 3 0 5 0;
 #X connect 4 0 6 1;
@@ -40,8 +41,6 @@
 #X connect 10 0 11 0;
 #X connect 11 0 7 0;
 #X connect 12 0 16 0;
-#X connect 13 0 26 0;
-#X connect 13 0 18 0;
 #X connect 14 0 23 0;
 #X connect 16 0 17 0;
 #X connect 17 0 19 0;
@@ -50,6 +49,7 @@
 #X connect 20 0 21 0;
 #X connect 21 0 10 0;
 #X connect 22 0 20 0;
-#X connect 23 0 15 0;
+#X connect 23 0 26 0;
 #X connect 25 0 1 0;
-#X connect 26 0 27 0;
+#X connect 26 0 15 0;
+#X connect 27 0 18 0;
