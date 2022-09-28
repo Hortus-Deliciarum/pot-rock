@@ -2807,6 +2807,7 @@
 #X obj 770 698 sel 1;
 #X obj 206 558 netreceive -b -u 47000;
 #X obj 439 600 dac~;
+#X obj 64 663 print DEBUG;
 #X connect 0 0 82 0;
 #X connect 3 0 2 0;
 #X connect 4 0 13 0;
@@ -2904,6 +2905,7 @@
 #X connect 73 0 74 0;
 #X connect 75 0 76 0;
 #X connect 76 0 83 0;
+#X connect 76 0 88 0;
 #X connect 78 0 77 0;
 #X connect 79 0 3 0;
 #X connect 80 0 81 0;
