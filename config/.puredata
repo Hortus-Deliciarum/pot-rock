@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-puredata -nogui -jack /home/rock/Documents/Hortus-Deliciarum/pot-rock/patches/test_serial_rcv.pd
+puredata -nogui -jack /home/rock/Documents/Hortus-Deliciarum/pot-rock/patches/simple_delay.pd

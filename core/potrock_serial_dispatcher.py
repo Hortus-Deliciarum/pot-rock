@@ -9,6 +9,7 @@ import serial
 import toml
 from debugs import debug
 from pythonosc import udp_client
+import time
 
 SERIAL_PATH = '/dev/ttyS1'
 BAUDRATE = 115200
