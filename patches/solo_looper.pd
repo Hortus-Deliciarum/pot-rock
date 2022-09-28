@@ -13659,7 +13659,7 @@
 #X obj 435 653 dac~;
 #X obj 164 633 print DEBUG;
 #X obj 346 581 route pot_1;
-#X obj 713 486 route pot_2;
+#X obj 782 460 route pot_2;
 #X msg 713 511 \$1 25;
 #X obj 713 536 line~;
 #X obj 438 522 *~;
@@ -13673,6 +13673,7 @@
 #X msg 346 656 \$1 25;
 #X obj 346 681 line~;
 #X obj 324 721 vcf~ 3;
+#X obj 782 485 * 2;
 #X connect 0 0 78 0;
 #X connect 3 0 2 0;
 #X connect 4 0 12 0;
@@ -13774,7 +13775,7 @@
 #X connect 81 0 80 0;
 #X connect 82 0 71 0;
 #X connect 85 0 95 0;
-#X connect 86 0 87 0;
+#X connect 86 0 100 0;
 #X connect 87 0 88 0;
 #X connect 88 0 89 1;
 #X connect 89 0 99 0;
@@ -13788,3 +13789,4 @@
 #X connect 98 0 99 1;
 #X connect 99 0 83 0;
 #X connect 99 0 93 0;
+#X connect 100 0 87 0;
