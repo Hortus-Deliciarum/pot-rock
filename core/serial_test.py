@@ -9,6 +9,9 @@ if __name__ == '__main__':
     client = udp_client.SimpleUDPClient("127.0.0.1", 8000)
 
     while True:
-        data = ser.readline()
-        s = data.decode('ascii')
-        print(s)
+        try:
+            data = ser.readline()
+            s = data.decode('ascii')
+            print(s)
+        except:
+            print("troppi pacchetti?")
