@@ -4,7 +4,7 @@
 #X msg 100 69 mask 4 0.7;
 #X msg 165 215 useloudness 0;
 #X obj 286 87 loadbang;
-#X obj 506 151 adc~ 1;
+#X obj 664 127 adc~ 1;
 #X obj 149 710 s attack;
 #X obj 913 55 loadbang;
 #X msg 913 79 \; pd dsp 1;
@@ -15,14 +15,14 @@
 #X msg 73 28 thresh 2.5 8;
 #X obj 1044 96 oscparse;
 #X obj 1044 126 list trim;
-#X obj 505 252 *~;
-#X msg 524 203 \$1 5;
-#X obj 524 227 line~;
+#X obj 663 228 *~;
+#X msg 682 179 \$1 5;
+#X obj 682 203 line~;
 #X obj 1119 182 s vib;
 #X obj 1044 182 s gain;
-#X obj 524 178 r gain;
+#X obj 682 154 r gain;
 #X msg 784 1026 vis 3 1;
-#X floatatom 602 175 5 0 0 0 - - -;
+#X floatatom 760 151 5 0 0 0 - - -;
 #X msg 310 338 debounce 0;
 #X obj 149 566 t b;
 #X msg 149 608 1;
@@ -40,8 +40,8 @@
 #X obj 709 988 f 0;
 #X obj 939 332 r attack;
 #X obj 939 391 f 1;
-#X obj 477 86 tabplay~ array1;
-#X obj 513 44 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 635 62 tabplay~ array1;
+#X obj 671 20 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X msg 987 485 all clear;
 #X obj 939 361 delay 25;
@@ -99,6 +99,7 @@
 #X obj 385 30 r sens;
 #X obj 385 59 * 60;
 #X msg 328 129 minvel \$1;
+#X obj 385 88 int;
 #X connect 0 0 1 0;
 #X connect 1 0 25 0;
 #X connect 2 0 1 0;
@@ -192,5 +193,6 @@
 #X connect 88 0 90 0;
 #X connect 89 0 80 0;
 #X connect 93 0 94 0;
-#X connect 94 0 95 0;
+#X connect 94 0 96 0;
 #X connect 95 0 1 0;
+#X connect 96 0 95 0;

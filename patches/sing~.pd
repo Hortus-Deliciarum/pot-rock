@@ -26,10 +26,11 @@
 #X floatatom 73 223 5 0 0 0 - - -;
 #X obj 144 511 *~;
 #X obj 538 488 / 128;
-#X obj 145 226 expr $f1 * (0.5 + \$1 / 128);
+#X obj 180 227 expr $f1 * (0.5 + \$1 / 128);
 #X connect 0 0 2 0;
 #X connect 2 0 13 0;
 #X connect 2 0 27 0;
+#X connect 2 0 18 0;
 #X connect 2 1 19 0;
 #X connect 3 0 5 0;
 #X connect 4 0 6 1;
@@ -52,4 +53,3 @@
 #X connect 23 0 26 0;
 #X connect 25 0 1 0;
 #X connect 26 0 15 0;
-#X connect 27 0 18 0;
