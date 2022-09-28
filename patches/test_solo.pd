@@ -14,7 +14,7 @@
 #X obj 427 465 dac~;
 #X obj 585 176 route pot_2;
 #X obj 114 192 adc~ 1;
-#X obj 426 288 osc~ 80;
+#X obj 426 288 osc~ 300;
 #X connect 0 0 1 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
