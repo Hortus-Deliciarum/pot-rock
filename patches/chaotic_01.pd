@@ -77,10 +77,10 @@
 #X obj 768 172 print DEBUG_GAIN;
 #X obj 1221 352 print DEBUG_FDBK;
 #X obj 423 513 print DEBUG_BONK;
-#X msg 328 131 minvel 25;
 #X msg 1471 193 \; pd dsp 1;
 #X obj 1471 133 loadbang;
 #X obj 912 900 dac~ 1;
+#X msg 328 131 minvel 60;
 #X connect 0 0 1 0;
 #X connect 1 0 16 0;
 #X connect 2 0 1 0;
@@ -90,7 +90,7 @@
 #X connect 4 0 7 0;
 #X connect 4 0 8 0;
 #X connect 4 0 3 0;
-#X connect 4 0 77 0;
+#X connect 4 0 80 0;
 #X connect 5 0 10 0;
 #X connect 7 0 1 0;
 #X connect 8 0 1 0;
@@ -150,7 +150,7 @@
 #X connect 54 1 67 0;
 #X connect 54 2 56 0;
 #X connect 54 3 55 0;
-#X connect 57 0 80 0;
+#X connect 57 0 79 0;
 #X connect 58 0 59 0;
 #X connect 58 0 65 0;
 #X connect 59 0 60 0;
@@ -167,5 +167,5 @@
 #X connect 71 0 57 0;
 #X connect 71 0 24 0;
 #X connect 72 0 69 0;
-#X connect 77 0 1 0;
-#X connect 79 0 78 0;
+#X connect 78 0 77 0;
+#X connect 80 0 1 0;
