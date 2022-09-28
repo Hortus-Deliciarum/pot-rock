@@ -3,8 +3,8 @@
 #X obj 149 531 bonk~;
 #X msg 100 69 mask 4 0.7;
 #X msg 165 215 useloudness 0;
-#X obj 286 87 loadbang;
-#X msg 302 167 attack-frames 1;
+#X obj 357 33 loadbang;
+#X msg 460 148 attack-frames 1;
 #X msg 143 170 spew 0;
 #X msg 73 28 thresh 2.5 8;
 #X msg 310 338 debounce 0;

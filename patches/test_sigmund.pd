@@ -1,0 +1,6 @@
+#N canvas 603 206 910 586 16;
+#X obj 94 179 sigmund~ -hop 4096 pitch env;
+#X obj 90 50 adc~ 1;
+#X obj 94 208 print sigmund;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
