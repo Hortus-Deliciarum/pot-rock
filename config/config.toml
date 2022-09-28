@@ -3,7 +3,7 @@ DEBUG = 1
 
 [network]
 IP = '127.0.0.1'
-OUT_PORT = 8000
+OUT_PORT = 47000
 
 [address]
     ADDRESS = [
