@@ -21,11 +21,11 @@
 
 const char* ssid = "HORTUS";
 const char* pwd = "francesco";
-const IPAddress ip(192, 168, 1, 86);
+const IPAddress ip(192, 168, 0, 86);
 const IPAddress gateway(192, 168, 0, 1);
 const IPAddress subnet(255, 255, 255, 0);
 
-const char* host = "192.168.1.85";
+const char* host = "192.168.0.85";
 const int recv_port = 54321;
 const int bind_port = 54345;
 const int send_port = 55555;
