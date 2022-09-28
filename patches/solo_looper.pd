@@ -14115,7 +14115,7 @@
 #X obj 443 506 *~;
 #X floatatom 355 760 5 0 0 0 - - -;
 #X floatatom 777 576 5 0 0 0 - - -;
-#X obj 593 20 f 0.5;
+#X obj 593 20 f 1;
 #X connect 0 0 78 0;
 #X connect 3 0 2 0;
 #X connect 4 0 12 0;
