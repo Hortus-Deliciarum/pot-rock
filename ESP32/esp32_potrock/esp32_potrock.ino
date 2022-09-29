@@ -4,7 +4,7 @@
 #include <HardwareSerial.h>
 
 #define DEBUG     1
-#define POTROCK   3
+#define POTROCK   4
 #define N_POTS    POTROCK
 #define N_BUTTONS POTROCK
 #define RX        16

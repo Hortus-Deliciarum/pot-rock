@@ -88,6 +88,7 @@ void setup()
 
 void loop()
 {
+    OscWiFi.post();
     for (int j = 0; j < N_BUTTONS; j++) {
         button[j]->loop();
     }
